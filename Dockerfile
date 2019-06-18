@@ -1,6 +1,6 @@
 FROM tomcat:8-jdk8
 
-RUN apt update 
+RUN apt update
 RUN apt install maven -y
 ADD . /app
 WORKDIR /app
