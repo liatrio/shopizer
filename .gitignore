@@ -30,4 +30,5 @@ sm-shop/.project
 **/.classpath
 */sm-shop/src/main/resources/*
 sm-shop/src/main/resources/database.properties
-.DS_Store
+.factorypath
+.classpath
