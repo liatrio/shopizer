@@ -7,6 +7,9 @@ build:
   local: {}
 
 deploy:
-  kubectl:
-    manifests:
-      - k8-*
+  helm:
+    releases:
+      - name: shopizer
+        chartPath: ./shopizer
+        values:
+          image: shopizer

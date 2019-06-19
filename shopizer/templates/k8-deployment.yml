@@ -13,4 +13,4 @@ spec:
       spec:
         containers:
         - name: shop-app
-          image: shopizer
+          image: {{ .Values.image }}
