@@ -10,6 +10,6 @@ deploy:
   helm:
     releases:
       - name: shopizer
-        chartPath: ./shopizer
+        chartPath: ./charts/shopizer
         values:
           image: shopizer
