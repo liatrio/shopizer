@@ -78,5 +78,62 @@ username : admin
 password : password
 
 The above instructions configure and run Shopizer with default settings.
-Consult the offical documentation for more configuration settings.
+
+### Configuration:
+-------------------
+
+#### Database Configuration
+
+Shopizer currently supports and has been tested with H2 and MySQL databases.
+
+- Configure with H2 database
+
+By default H2 files are saved into your application server runtime directory.
+To change the location where the files have to be saved,
+edit sm-shop/src/main/resources/database.properties and edit the line
+```
+db.jdbcUrl=jdbc\:h2\:file\:c:/SALESMANAGER;AUTOCOMMIT\=OFF;INIT\=CREATE SCHEMA IF NOT EXISTS SALESMANAGER
+```
+
+Make sure the file path is a valid existing directory. In this case the
+configuration file will be saved in c:\
+
+- Configure with MySQL
+
+Log to your MySQL as root and create schema SALESMANAGER
+
+```
+mysql>CREATE DATABASE SALESMANAGER;
+mysql>GRANT USAGE, SELECT ON *.* TO testuser@localhost IDENTIFIED BY 'password' with grant option;
+mysql>GRANT ALL ON SALESMANAGER.* TO testuser@localhost;
+mysql>FLUSH PRIVILEGES;
+```
+
+Edit sm-shop/src/main/resources/database.properties
+
+```
+db.jdbcUrl=jdbc:mysql://localhost:3306/SALESMANAGER?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+db.user=YOUR USERNAME
+db.password=YOUR PASSWORD
+db.driverClass=com.mysql.jdbc.Driver
+hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+db.preferredTestQuery=SELECT 1
+db.schema=SALESMANAGER
+hibernate.hbm2ddl.auto=update
+```
+
+Note: Database and table names are not case sensitive in Windows,
+and case sensitive in most varieties of Unix-Linux. Consequently MySQL which
+uses lower case schema and table names will not be able to see the schema
+and tables which are created upper case in Shopizer. If you get an
+exception of a table not being found and being displayed in lower case
+in the error message, you will have to specify this property in My.cnf.
+To resolve the issue set the lower_case_table_names to 1 in My.cnf
+configuration file
+
+Edit My.cnf
+
+```
+lower_case_table_names=1
+```
 
