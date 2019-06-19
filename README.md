@@ -1,76 +1,70 @@
 Shopizer (for java 1.8 +)
 -------------------
-[![last_version](https://img.shields.io/badge/last_version-v2.5.0-blue.svg?style=flat)](https://github.com/shopizer-ecommerce/shopizer/tree/2.5.0)
-[![Official site](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=official%20site)](http://www.shopizer.com/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/shopizerecomm/shopizer.svg)](https://hub.docker.com/r/shopizerecomm/shopizer)
-[![stackoverflow](https://img.shields.io/badge/shopizer-stackoverflow-orange.svg?style=flat)](http://stackoverflow.com/questions/tagged/shopizer)
+
+Ignite Lab Documenation
 -------------------
 
-Java open source e-commerce software
+[Official Documentation](http://shopizer-ecommerce.github.io/shopizer/#)
 
-- Shopping cart
-- Catalogue
-- Search
-- Checkout
-- Administration
-- REST API
+The root of this project contains 6 directories:
 
-See the demo:
--------------------
-http://demo.shopizer.com:8080
+`sm-admin` describes the admin section of the site, viewable at `/admin`.
 
+The `sm-shop` repositories describe the webapp itself, in addition to
+controllers for different services of the site.
+
+The `sm-core` repositories describe the functions of the core services of the
+application.
+
+According to official documentation
+this application can run on any Java servlet container or JEE application
+server, including IBM Websphere application server.
+
+Possible services that are candidates for porting to microservices may be:
+
+- Admin
+- Shopping Cart
+- User
 
 Get the code:
 -------------------
 Clone the repository:
-     
-	 $ git clone git://github.com/shopizer-ecommerce/shopizer.git
+
+  $ git clone git://github.com/liatrio/shopizer.git
 
 To build the application:
 
 Note: You need to be running Java 1.8 in order to correctly build the application
--------------------	
+-------------------
 From the command line with Maven installed:
 
-	$ cd shopizer
-	$ mvn clean install
-if Maven is not installed, use maven wrapper
-       
-	$ mvmw clean install
-	
+  $ cd shopizer
+  $ mvn clean install
 
-Run the application from Tomcat 
+Run the application from Tomcat
 -------------------
-copy sm-shop/target/ROOT.war to tomcat or any other application server deployment dir
+Copy sm-shop/target/ROOT.war to Tomcat or any other
+application server deployment directory.
 
 Increase heap space to 1024 m
 
 ### Heap space configuration in Tomcat:
 
 
-If you are using Tomcat, edit catalina.bat for windows users or catalina.sh for linux / Mac users
+If you are using Tomcat, edit catalina.bat for windows users or
+catalina.sh for linux / Mac users
 
-	in Windows
-	set JAVA_OPTS="-Xms1024m -Xmx1024m -XX:MaxPermSize=256m" 
-	
-	in Linux / Mac
-	export JAVA_OPTS="-Xms1024m -Xmx1024m -XX:MaxPermSize=256m" 
+  in Windows
+  set JAVA_OPTS="-Xms1024m -Xmx1024m -XX:MaxPermSize=256m"
 
-Run the application from Spring boot 
+  in Linux / Mac
+  export JAVA_OPTS="-Xms1024m -Xmx1024m -XX:MaxPermSize=256m"
+
+Run the application from Spring boot
 -------------------
 
-       $ cd sm-shop
-       $ mvn spring-boot:run
-if Maven is not installed, use maven wrapper
-       
-	   $ mvmw spring-boot:run
-
-Run the application from Spring boot in eclipse
--------------------
-
-Right click on com.salesmanager.shop.application.ShopApplication
-
-run as Java Application
+  $ cd sm-shop
+  $ mvn spring-boot:run
 
 ### Access the application:
 -------------------
@@ -83,23 +77,6 @@ username : admin
 
 password : password
 
-The instructions above will let you run the application with default settings and configurations.
-Please read the instructions on how to connect to MySQL, configure an email server and configure other subsystems
-
-
-### Documentation:
--------------------
-
-Documentation available from the wiki <http://shopizer-ecommerce.github.io/shopizer/#>
-
-ChatOps <https://shopizer.slack.com>  - Join our Slack channel https://shopizer-slackin.herokuapp.com/
-
-More information is available on shopizer web site here <http://www.shopizer.com>
-
-### Participation:
--------------------
-
-If you have interest in giving feedback or for participating to Shopizer project in any way
-Feel to use the contact form <http://www.shopizer.com/contact.html> and share your email address
-so we can send an invite to our Slack channel
+The above instructions configure and run Shopizer with default settings.
+Consult the offical documentation for more configuration settings.
 
