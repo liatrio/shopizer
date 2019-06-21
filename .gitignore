@@ -14,6 +14,7 @@
 /SALESMANAGER.h2.db/
 /SALESMANAGER.lock.db/
 sm-shop/SALESMANAGER.lock.db
+sm-shop/SALESMANAGER.trace.db
 .DS_Store
 */sm-shop/**
 .project
