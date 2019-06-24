@@ -7,6 +7,7 @@ Ignite Lab Documenation
 [Official Documentation](http://shopizer-ecommerce.github.io/shopizer/#)
 
 ![Shopizer Archicture](shopizer-arch.png)
+
 The root of this project contains 6 directories:
 
 `sm-admin` describes the admin section of the site, viewable at `/admin`.
