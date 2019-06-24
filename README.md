@@ -32,7 +32,9 @@ Get the code:
 -------------------
 Clone the repository:
 
-  $ git clone git://github.com/liatrio/shopizer.git
+```
+git clone git://github.com/liatrio/shopizer.git
+```
 
 To build the application:
 
@@ -40,8 +42,10 @@ Note: You need to be running Java 1.8 in order to correctly build the applicatio
 -------------------
 From the command line with Maven installed:
 
-  $ cd shopizer
-  $ mvn clean install
+```
+cd shopizer
+mvn clean install
+```
 
 Run the application from Tomcat
 -------------------
@@ -56,28 +60,36 @@ Increase heap space to 1024 m
 If you are using Tomcat, edit catalina.bat for windows users or
 catalina.sh for linux / Mac users
 
-  in Windows
-  set JAVA_OPTS="-Xms1024m -Xmx1024m -XX:MaxPermSize=256m"
+in Windows
 
-  in Linux / Mac
-  export JAVA_OPTS="-Xms1024m -Xmx1024m -XX:MaxPermSize=256m"
+```
+set JAVA_OPTS="-Xms1024m -Xmx1024m -XX:MaxPermSize=256m"
+```
+
+in Linux / Mac
+
+```
+export JAVA_OPTS="-Xms1024m -Xmx1024m -XX:MaxPermSize=256m"
+```
 
 Run the application from Spring boot
 -------------------
 
-  $ cd sm-shop
-  $ mvn spring-boot:run
+```
+cd sm-shop
+mvn spring-boot:run
+```
 
 ### Access the application:
 -------------------
 
-Access the deployed web application at: http://localhost:8080/
+Access the deployed web application at: `http://localhost:8080/`
 
-Acces the admin section at: http://localhost:8080/admin
+Acces the admin section at: `http://localhost:8080/admin`
 
-username : admin
+`username : admin`
 
-password : password
+`password : password`
 
 The above instructions configure and run Shopizer with default settings.
 
